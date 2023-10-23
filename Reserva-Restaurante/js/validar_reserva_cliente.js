@@ -77,6 +77,7 @@ function tiempoLimiteReserva(fecha, hora) {
     }
 }
 function iniciarTemporizador(){
+    //Tiempo limite para confirmar la reserva o te redirige al buscador
     let temporizador = document.querySelector("#temporizador");
     let segundos = 20;
 const timer = setInterval(()=>{
@@ -95,6 +96,7 @@ function limpiarTemporizador(timer){
 }
 
 function verificarHoraIngresada(){
+    //Validar hora, no puede ser fuera del rango
     let horaInput = document.getElementById("hora-reserva-cliente");
     let horaIngresada = horaInput.value;
     let partesHora = horaIngresada.split(":");
@@ -106,6 +108,7 @@ function verificarHoraIngresada(){
 
 }
 function verificarFechaIngresada() {
+    //Validar fecha, no puede ser la de hoy y tampoco más de una semana después
     let fechaInput = document.getElementById("fecha-reserva-cliente");
     let fechaManana = new Date();
     fechaManana.setDate(fechaManana.getDate() + 1);
@@ -119,7 +122,7 @@ function verificarFechaIngresada() {
 
     if (fechaIngresada < fechaManana || fechaIngresada > fechaUnaSemanaDespues) {
         console.log("Por favor, ingrese una fecha que sea mañana o hasta una semana después.");
-        fechaInput.value = ""; // Borra el valor ingresado
+        fechaInput.value = ""; 
     }
 }
 
