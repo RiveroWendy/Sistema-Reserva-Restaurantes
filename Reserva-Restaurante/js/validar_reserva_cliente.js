@@ -118,7 +118,6 @@ function verificarFechaIngresada() {
 
     let fechaIngresada = new Date(fechaInput.value);
     console.log("Fecha ingresada: " + fechaIngresada);
-    console.log("Fecha mañana: " + fechaManana);
 
     if (fechaIngresada < fechaManana || fechaIngresada > fechaUnaSemanaDespues) {
         console.log("Por favor, ingrese una fecha que sea mañana o hasta una semana después.");
