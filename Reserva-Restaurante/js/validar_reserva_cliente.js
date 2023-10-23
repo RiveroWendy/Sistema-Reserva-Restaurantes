@@ -16,44 +16,26 @@ function enviarForm(e) {
     e.preventDefault();
     verificarCamposNulos();
 }
+
 function verificarCamposNulos() {
-    let fechaReserva = document.getElementById("fecha-reserva-cliente").value;
-    let horaReserva = document.getElementById("hora-reserva-cliente").value;
-    let duracionReserva = document.getElementById("duracion-reserva-cliente").value;
-    let cantidadReserva = document.getElementById("cantidad-reserva-cliente").value;
-    let platoReserva = document.getElementById("plato-reserva-cliente").value;
-    let pagoReserva = document.getElementById("pago-reserva-cliente").value;
+    let inputIds = [
+        "fecha-reserva-cliente",
+        "hora-reserva-cliente",
+        "duracion-reserva-cliente",
+        "cantidad-reserva-cliente",
+        "plato-reserva-cliente",
+        "pago-reserva-cliente"
+    ];
 
-    if (fechaReserva.trim() === "") {
-        console.log("Fecha es required.");
-        return;
-    }
-
-    if (horaReserva.trim() === "") {
-        console.log("Hora es required.");
-        return;
-    }
-
-    if (duracionReserva === "") {
-        console.log("Duración de reserva es required.");
-        return;
-    }
-
-    if (cantidadReserva === "") {
-        console.log("Cantidad de comensales es required.");
-        return;
-    }
-
-    if (platoReserva === "") {
-        console.log("Plato es required.");
-        return;
-    }
-
-    if (pagoReserva === "") {
-        console.log("Método de pago es required.");
-        return;
+    for (let inputId of inputIds) {
+        let inputValue = document.getElementById(inputId).value;
+        if (inputValue.trim() === "") {
+            console.log(`${inputId} es required.`);
+            return;
+        }
     }
 }
+
 
 
 function obtenerFechaHoraReserva() {
