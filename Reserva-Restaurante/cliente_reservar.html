@@ -13,6 +13,7 @@
         crossorigin="anonymous"></script>
     <!-- Enlace a tu archivo CSS personalizado -->
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/validar_reserva_cliente.js"></script>
 </head>
 
 <body>
@@ -36,69 +37,60 @@
     <div class="container mt-3">
         <!-- Tarjeta con imagen y título -->
         <div class="row">
-                <div class="card bg-dark text-white">
-                    <img src="img/logo-leñas.png" class="rounded float-start w-25" alt="..." height="300">
-                    <div class="card-img-overlay text-end">
-                        <h3 class="card-title">Las Leñas</h3>
-                        <h5>Este lugar es genial</h5>
-                        <h5>Este lugar es genial</h5>
-                    </div>
+            <div class="card bg-dark text-white">
+                <img src="img/logo-leñas.png" class="rounded float-start w-25" alt="..." height="300">
+                <div class="card-img-overlay text-end">
+                    <h3 class="card-title">Las Leñas</h3>
+
+                </div>
             </div>
         </div>
+
         <!-- Formulario y Tarjeta -->
         <div class="row align-items-start">
             <!-- Formulario -->
             <div class="col-6">
-                <form class="gap-2 row g-3 m-3">
+                <form method="" id="form-reserva-cliente" class="gap-2 row g-3 m-3">
                     <div class="col-4">
-                        <label for="inputEmail4" class="form-label">Fecha</label>
-                        <input type="date" class="form-control" id="inputEmail4">
+                        <label for="fecha-reserva-cliente" class="form-label">Fecha</label>
+                        <input type="date" class="form-control" id="fecha-reserva-cliente" required >
                     </div>
                     <div class="col-4">
-                        <label for="inputPassword4" class="form-label">Hora</label>
-                        <input type="time" class="form-control" id="inputPassword4">
+                        <label for="hora-reserva-cliente" class="form-label">Hora</label>
+                        <input type="time" class="form-control" id="hora-reserva-cliente" required>
                     </div>
+                    <div id="mensaje-reserva" class="d-none">¡Fecha y hora elegidos! tiene tiempo limite para confirmar reserva</div>
+                    <p id="temporizador" class="d-none"></p>
                     <div class="col-4">
-                        <label for="inputAddress" class="form-label">Duración de reserva</label>
-                        <select class="form-control">
-                            <option value="">1</option>
-                            <option value="">2</option>
-                            <option value="">3</option>
+                        <label for="duracion-reserva-cliente" class="form-label">Duración de reserva</label>
+                        <select class="form-select" id="duracion-reserva-cliente" required >
+                            <option value=""></option>
+                            <option value="1">15 minutos</option>
+                            <option value="2">30 minutos</option>
+                            <option value="3">45 minutos</option>
                         </select>
                     </div>
                     <div class="col-4">
-                        <label for="inputAddress2" class="form-label">Cantidad de comensales</label>
-                        <select class="form-control">
-                            <option value="">1</option>
-                            <option value="">2</option>
-                            <option value="">3</option>
+                        <label for="cantidad-reserva-cliente" class="form-label">Cantidad de comensales</label>
+                        <select class="form-select" id="cantidad-reserva-cliente" required>
+                            <option value=""></option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
                         </select>
                     </div>
                     <div class="col-12">
-                        <label for="inputCity" class="form-label">Menú</label>
+                        <label  class="form-label">Menú</label>
                     </div>
-                    <div class="col-md-12">
-                        <label for="inputState" class="form-label">Comensal 1</label>
-                        <select class="form-control w-50">
-                            <option value="">1</option>
-                            <option value="">2</option>
-                            <option value="">3</option>
-                        </select>
+                    <div class="col-12" id="menu-comensal">
+                        
                     </div>
-                    <div class="col-md-12">
-                        <label for="inputState" class="form-label">Comensal 2</label>
-                        <select class="form-control w-50">
-                            <option value="">1</option>
-                            <option value="">2</option>
-                            <option value="">3</option>
-                        </select>
-                    </div>
-                    <div class="col-md-2">
-                        <label for="inputZip" class="form-label">Método de pago</label>
-                        <select class="form-control">
-                            <option value="">Seleccione...</option>
-                            <option value="">Mercado Pago</option>
-                            <option value="">Presencial</option>
+                    <div class="col-12">
+                        <label for="pago-reserva-cliente" class="form-label">Método de pago</label>
+                        <select class="form-select" id="pago-reserva-cliente" required >
+                            <option value=""></option>
+                            <option value="1">Mercado Pago</option>
+                            <option value="2">Presencial</option>
                         </select>
                     </div>
                     <div class="col-12">
@@ -106,11 +98,12 @@
                     </div>
                 </form>
             </div>
-    
+
             <!-- Tarjeta Menú-->
             <div class="col-6">
-            <iframe src="menu.html"></iframe>
+                <iframe src="menu.html"></iframe>
+            </div>
         </div>
-    </div>
 </body>
+
 </html>
