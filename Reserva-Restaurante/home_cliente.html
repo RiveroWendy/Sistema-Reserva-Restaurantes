@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
 
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -20,10 +22,12 @@
     </header>
     <ul class="nav nav-tabs mt-3" id="menu-cliente">
         <li class="nav-item">
-            <button type="button" class="nav-link active" id="primero-tab" data-bs-toggle="tab" data-bs-target="#primero">Datos personales</button>
+            <button type="button" class="nav-link active" id="primero-tab" data-bs-toggle="tab"
+                data-bs-target="#primero">Datos personales</button>
         </li>
         <li class="nav-item">
-            <button type="button" class="nav-link" id="segundo-tab" data-bs-toggle="tab" data-bs-target="#segundo">Mis reservas</button>
+            <button type="button" class="nav-link" id="segundo-tab" data-bs-toggle="tab" data-bs-target="#segundo">Mis
+                reservas</button>
         </li>
         <!-- <li class="nav-item">
             <button type="button" class="nav-link" id="tercero-tab" data-bs-toggle="tab" data-bs-target="#tercero">Experiencial laboral</button>
@@ -31,38 +35,90 @@
     </ul>
     <div class="tab-content" id="contenido">
         <div class="tab-pane fade show active" id="primero">
-            <h5>Nombre y Apellido</h5>
-            <p>Wendy Rivero</p>
-            
+            <form class="row g-3">
+                <div class="col-md-6">
+                    <label for="inputEmail4" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="inputEmail4" disabled>
+                </div>
+                <div class="col-md-6">
+                    <label for="inputPassword4" class="form-label">Nombre</label>
+                    <input type="password" class="form-control" id="inputPassword4" disabled>
+                </div>
+                <div class="col-md-6">
+                    <label for="inputEmail4" class="form-label">DNI</label>
+                    <input type="email" class="form-control" id="inputEmail4" disabled>
+                </div>
+                <div class="col-md-6">
+                    <label for="inputPassword4" class="form-label">Telefono</label>
+                    <input type="password" class="form-control" id="inputPassword4" disabled>
+                </div>
+
+
+
+            </form>
         </div>
         <div class="tab-pane fade" id="segundo">
             <!---->
-            <div class="card col-4">
-                <div class="card-header row">
-                    <div class="col-6">
-                    Nombre
-                    </div>
-                    <div class="col-6">
-                        <img id="img-lugar" src="logo.png">
-                    </div>
-                </div>
-                <div class="card-body">
-                    <p>fecha
-                    plato
-                    </p>
-                </div>
-                <div class="card-footer col">
-                    
-                    <button type="button" class="btn btn-info">Editar</button>
-                   <br>
-                    <button type="button" class="btn btn-danger">Eliminar</button>
-                   
-                </div>
-              </div>
+            <div class="table-responsive" style="height: 64.5vh;">
+                <table class="table table-striped table-hover">
+                    <thead class="table-primary">
+                        <tr>
+                            <th>Mesa</th>
+                            <th>Fecha de Reserva</th>
+                            <th>Hora de Reserva</th>
+                            <th>Duración de la Reserva</th>
+                            <th>Número de Comensales</th>
+                            <th>Menú</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-end">1</td>
+                            <td>Fecha 1</td>
+                            <td>Hora 1</td>
+                            <td>Duración 1</td>
+                            <td>Número de Comensales 1</td>
+                            <td>Menú 1</td>
+                            <td>
+                                <button title="Ver más" type="button" class="btn btn-outline-danger"
+                                    data-bs-toggle="modal" data-bs-target="#modalCancelarReserva">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-x-square" viewBox="0 0 16 16">
+                                        <path
+                                            d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                                        <path
+                                            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>             
+                    </tbody>
+                </table>
+            </div>
+
         </div>
-        <!-- <div class="tab-pane fade" id="tercero">
-            
-        </div> -->
+
+
+        <!-- Modal Eliminar Plato -->
+    <div class="modal fade" id="modalCancelarReserva" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog-centered modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Cancelar Reserva</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h5>¿Está seguro de cancelar reserva?</h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger">Eliminar</button>
+            </div>
+        </div>
     </div>
+</div>
 </body>
+
 </html>
