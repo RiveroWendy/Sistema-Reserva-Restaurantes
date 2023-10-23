@@ -6,54 +6,63 @@
     <title>Mis reservas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
-    <div class="mb-3 mt-3">
-    <nav class="navbar navbar-expand-sm bg-light">
-        <div class="container-fluid justify-content-center row">
-            <ul class="navbar-nav">
-                <li class="nav-item col">
-                    <a class="nav-link" href="#">Perfil</a>
-                </li>
-                <li class="nav-item col">
-                    <a class="nav-link" href="#">Mis reservas</a>
-                </li>
-                <li class="nav-item col">
-                    <a class="nav-link" href="#">Favoritos</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    </div>
-    
-    <div class="mb-3 mt-3">
-        <h3 id="titulo-home">
-            Mis reservas
-        </h3>
-    </div>
-    
-    <div class="card col-4">
-        <div class="card-header row">
-            <div class="col-6">
-            Nombre
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 mt-3 mb-4">
+                    <h4 class="text-light">Sistema Restaurante</h4>
+                </div>
             </div>
-            <div class="col-6">
-                <img id="img-lugar" src="logo.png">
-            </div>
-        </div>
-        <div class="card-body">
-            <p>fecha
-            plato
-            </p>
-        </div>
-        <div class="card-footer col">
+    </header>
+    <ul class="nav nav-tabs mt-3" id="menu-cliente">
+        <li class="nav-item">
+            <button type="button" class="nav-link active" id="primero-tab" data-bs-toggle="tab" data-bs-target="#primero">Datos personales</button>
+        </li>
+        <li class="nav-item">
+            <button type="button" class="nav-link" id="segundo-tab" data-bs-toggle="tab" data-bs-target="#segundo">Mis reservas</button>
+        </li>
+        <!-- <li class="nav-item">
+            <button type="button" class="nav-link" id="tercero-tab" data-bs-toggle="tab" data-bs-target="#tercero">Experiencial laboral</button>
+        </li> -->
+    </ul>
+    <div class="tab-content" id="contenido">
+        <div class="tab-pane fade show active" id="primero">
+            <h5>Nombre y Apellido</h5>
+            <p>Wendy Rivero</p>
             
-            <button type="button" class="btn btn-info">Editar</button>
-           <br>
-            <button type="button" class="btn btn-danger">Eliminar</button>
-           
         </div>
-      </div>
-
+        <div class="tab-pane fade" id="segundo">
+            <!---->
+            <div class="card col-4">
+                <div class="card-header row">
+                    <div class="col-6">
+                    Nombre
+                    </div>
+                    <div class="col-6">
+                        <img id="img-lugar" src="logo.png">
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p>fecha
+                    plato
+                    </p>
+                </div>
+                <div class="card-footer col">
+                    
+                    <button type="button" class="btn btn-info">Editar</button>
+                   <br>
+                    <button type="button" class="btn btn-danger">Eliminar</button>
+                   
+                </div>
+              </div>
+        </div>
+        <!-- <div class="tab-pane fade" id="tercero">
+            
+        </div> -->
+    </div>
 </body>
 </html>

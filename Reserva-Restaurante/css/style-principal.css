@@ -1,0 +1,19 @@
+body{
+    background-color: #c1853b;
+}
+span{
+    color: blue;
+}
+.principal h1{
+    font-size: 4em;
+    margin-top: 3em;
+}
+.principal a{
+    font-size: 2em;
+    
+}
+.btn{
+    margin-right: 1em;
+    margin-top: 2em;
+    padding: 1em;
+}
